@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New York 2100 - Virtual Reality</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+
+
+
+
+<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+<script src="script/camera-cube-env.js"></script>
+<script src="script/dat.gui.min.js"></script>
+  <script src="script/gradientsky.min.js"></script>
+  <script src="script/aframe.js"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+    <!-- Scene -->
+    <div>
+    <a-entity id="homePage" link="href: index.html;"></a-entity>
+    <!-- <a-entity id="singularScene" link="href: singular-scene.html;"></a-entity> -->
+
+    <div id="scene">
+    <a-scene renderer="gammaOutput: true; antialias: true; logarithmicDepthBuffer: true" physics=" " >
+  
+      <a-entity tracked-controls="controller: 0; id: OpenVR Gamepad"></a-entity>
+      
+  
+  
+  
+      <!-- Sky -->
+      <a-sky material="shader: gradient; topColor: 236 241 246; bottomColor: 220 220 220;" scale="10 10 10" visible>
+      </a-sky>
+      <!-- Lighting -->
+      
+  
+  
+      <a-entity light="type: hemisphere; intensity:0.1; distance: 5000; decay: 1; color:#fffff; groundColor:#fffff"
+        position="20 50 10" visible></a-entity>
+        
+
+      <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1806" height="1101"
+        style="width: 1806px; height: 1101px;"></canvas>
+  
+  
+     
+
+  
+
+    
+  
+
+    
+    
+        <!--Front frame-->
+        <a-assets><img id="frame1" src="./assets/images/chloe/photo-1.png" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="-25 420 630" src="#frame1" link="href: chloe-project.html;"  static-body ></a-box>
+      
+
+        <!--Second right frame-->
+        <a-assets><img id="frame2" src="./assets/images/yujing/MG_1312_web_text.jpg" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="350 420 515" rotation="0 36 0" src="#frame2" link="href: yujing-project.html;"  static-body ></a-box>
+       
+
+        <!--Third right frame-->
+        <a-assets><img id="frame3" src="./assets/images/song-youjin/Couseling_ScreenShot_01.PNG" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="590 420 210" rotation="0 72 0" src="#frame3" link="href: song-youjin.html;"  static-body ></a-box>
+        
+
+        <!--Fourth right frame-->
+        <a-assets><img id="frame4" src="./assets/images/jing-dong/1.jpg" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="605 420 -165" rotation="0 108 0" src="#frame4" link="href: jingdong-project.html;"  static-body ></a-box>
+       
+
+         <!--Fifth right frame-->
+        <a-assets><img id="frame5" src="./assets/images/isaac/bg-edited-4.png" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10"  position="400 420 -480" rotation="0 144 0" src="#frame5" link="href: isaac-jiyoon.html;"  static-body ></a-box>
+       
+
+
+        <!--Behind frame-->
+        <a-assets><img id="frame6" src="./assets/images/elena/Artboard-1-copy-3-1-946x2048.png" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10"position="30 420 -630"  src="#frame6" link="href: elena.html;"  static-body ></a-box>
+       
+
+        <!--Second left frame-->
+        <a-assets><img id="frame7" src="./assets/images/xander/GungnyeoCombined-1536x1034.png" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10"position="-390 420 485" rotation="0 -36 0"  src="#frame7" link="href: xander.html;"  static-body ></a-box>
+      
+
+        <!--Third left frame-->
+        <a-assets><img id="frame8" src="./assets/images/anshuman/POSTER-1-1536x864.png" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="-600 420 165" rotation="0 -72 0"  src="#frame8" link="href: anshuman.html;"  static-body ></a-box>
+
+        
+        
+
+        <!--Fourth left frame-->
+        <a-assets><img id="frame9" src="./assets/images/simone/overview-750x750.jpg" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="-580 420 -220" rotation="0 -108 0"  src="#frame9" link="href: simone.html;"  static-body ></a-box>
+
+       
+
+        <!--Fifth right frame-->
+        <a-assets><img id="frame10" src="./assets/images/erik/kapwa_1-1200x677.png" ></a-assets>
+        <a-box id="boxExpand" width="170" height="250" depth="10" position="-340 420 -520" rotation="0 -144 0"  src="#frame10" link="href: erik.html;"  static-body ></a-box>
+
+        
+
+        <!-- <a-video id="vidSecond" autoplay loop="true" src="./assets/images/chloe-window.mp4" ></a-video>
+        <a-box src="#vidSecond" width="170" height="250" depth="10" position="-340 420 -520" rotation="0 -144 0" link="href: singular-scene.html;"></a-box> -->
+
+
+
+
+      <!--Scene 1 - Lobby-->
+      <!-- Model -->
+      <a-assets>
+        <a-asset-item id="lobby" src="./assets/3D-models/museum/round-version-2.gltf" shadow="cast: true" visible  ></a-asset-item>
+      </a-assets>
+  
+      <a-entity  id="scene1"  position="0 0 0" scale="10 10 10"  gltf-model="#lobby"  visible> 
+
+   
+     
+      
+
+        <a-entity light="type: ambient; intensity:0.4; distance: 1500; decay: 1; color:#FFFFF7"
+        position="-30 70 100"  visible></a-entity>
+        
+        <a-entity light="type: ambient; intensity:0.4; distance: 1500; decay: 1; color:#FFFFF7"
+        position="90 70 80"  visible></a-entity> 
+
+      </a-entity>
+  
+  
+      <a-box position="-30 600 1500"  scale="1050 1000 80" onclick="setScene3()" name-on-hover back-to-homePage visible  static-body    change-color="color:"> </a-box>
+      <a-box visible="false" color="#333" width="4000" height="4000" rotation="-90 0 0" position="0 170 0" static-body></a-box>
+      
+      
+      <a-box visible="false"  scale="550 1500 80"  position="420 500 1200" rotation="0 50 0" static-body></a-box>
+      <a-box visible="false"  scale="850 1500 80"  position="820 500 900" rotation="0 50 0" static-body></a-box>
+      <a-box visible="false"  scale="850 1500 80"  position="920 500 500" rotation="0 60 0" static-body></a-box>
+      <a-box visible="false"  scale="850 1500 80"  position="1120 500 -100" rotation="0 100 0" static-body></a-box>
+      <a-box visible="false"  scale="850 1500 80"  position="750 500 -800" rotation="0 140 0" static-body></a-box>
+      <a-box visible="false"  scale="1050 1500 80"  position="-110 500 -1050" rotation="0 180 0" static-body></a-box>
+
+      <a-box visible="false"  scale="850 1500 80"  position="-720 500 850" rotation="0 140 0" static-body></a-box>
+      <a-box visible="false"  scale="850 1500 80"  position="-1120 500 200" rotation="0 100 0" static-body></a-box>
+      <a-box visible="false"  scale="1050 1500 80"  position="-900 500 -550" rotation="0 60 0" static-body></a-box>
+      <a-box visible="false"  scale="650 1500 80"  position="-420 500 1150" rotation="0 130 0" static-body></a-box>
+
+
+
+
+      <a-entity
+      id="myTarget"
+      text-geometry="value: Homepage; size: 40; 
+      height: 5;"
+      material="color: gray"
+      position="150 600 1450"
+      rotation="0 -180 0"
+      visible="false"></a-entity>
+ 
+      <!--Plane-->
+      
+  
+
+  
+  
+  
+      <!-- Camera-->
+     
+      <a-entity id="rig"  kinematic-body position="0 460 1100" movement-controls="constrainToNavMesh: true; speed:25"   look-controls="pointerLockEnabled: true">
+        <a-entity camera cursor="rayOrigin: mouse" ></a-entity>
+        <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #rig;"></a-entity>
+        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #rig;"></a-entity>
+      </a-entity>
+
+     
+  
+       
+   
+      
+  
+  
+  
+    </a-scene>
+   
+     
+  
+    </div>
+
+    
+<script src="script/script.js"></script>
+  </body>
+</html>

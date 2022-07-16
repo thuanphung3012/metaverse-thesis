@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New York 2100 - Virtual Reality</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+<script src="https://rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script>
+
+<script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+
+
+<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+<script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+<script src="https://unpkg.com/aframe-input-mapping-component/dist/aframe-input-mapping-component.min.js"></script>
+<script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+<script src="script/camera-cube-env.js"></script>
+<script src="script/dat.gui.min.js"></script>
+  <script src="script/gradientsky.min.js"></script>
+  <script src="script/aframe.js"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+ 
+</head>
+
+<body>
+    <!-- Scene -->
+    <a-scene  renderer="gammaOutput: true; antialias: true; logarithmicDepthBuffer: true" physics="" >
+  
+      <a-entity tracked-controls="controller: 0; id: OpenVR Gamepad"></a-entity>
+      
+  
+  
+  
+      <!-- Sky -->
+      <a-sky material="shader: gradient; topColor: 0 0 0; bottomColor: 0 0 0;" scale="10 10 10" visible>
+      </a-sky>
+      <!-- Lighting -->
+  
+  
+  
+      <a-entity light="type: hemisphere; intensity:0.1; distance: 5000; decay: 1; color:#969693 groundColor:#fffff"
+        position="20 70 100" visible></a-entity>
+        
+  
+  
+  
+     
+
+      <!--Text-->
+      <a-entity
+        id="myTarget" 
+        text-geometry="value:Next Project; size: 80; 
+        height: 10;"
+        material="color: #FFFFFF"
+        position="250 1000 4000"
+        rotation="0 -180 0"
+        visible="false"></a-entity>
+
+      <a-entity
+      text-geometry="value: EXIT; size: 120; 
+      height: 10;"
+      material="color: #000000"
+      position="150 2070 3950"
+      rotation="0 -180 0"
+      visible></a-entity>
+
+
+      <a-assets id="webIcon" src="./assets/images/portfolio-icon.png"></a-assets>
+      <a-sphere src="#webIcon" rotation="0 0 0" position="2050 900 -250" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000" radius="80" color="" mylink="href: https://isaacsante.com/"></a-sphere>
+      <a-entity
+      text-geometry="value: Click ; size: 30; 
+      height: 10;"
+      material="color: #FFFFFF"
+      position="2050 750 -300"
+      rotation="0 -90 0"
+      visible></a-entity>
+      
+      <a-assets id="projectIcon" src="./assets/images/project-icon.png"></a-assets>
+      <a-sphere src="#projectIcon" rotation="0 0 0" position="-2050 900 2850" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000" radius="80" color="" mylink="href: https://www.redefiningcountry.com/"></a-sphere>
+      <a-entity
+      text-geometry="value: Click ; size: 30; 
+      height: 10;"
+      material="color: #FFFFFF"
+      position="-2050 750 2900"
+      rotation="0 90 0"
+      visible></a-entity>
+      
+      
+      <a-sphere src="#webIcon" rotation="0 0 0" position="-2050 900 3150" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000" radius="80" color="" mylink="href: https://jiyoonmoon.com/"></a-sphere>  
+      <a-entity
+      text-geometry="value: Click ; size: 30; 
+      height: 10;"
+      material="color: #FFFFFF"
+      position="-2050 750 3200"
+      rotation="0 90 0"
+      visible></a-entity>
+  
+  
+      <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="3000" height="3000"
+        style="width: 1806px; height: 1101px;"></canvas>
+  
+  
+      <!--Box Transition Scene-->
+     <!--  <a-box id="box1" color="gray" onclick="setScene2()" position="0 800 25" scale="30 30 30" rotation="0 0 0" visible
+      name-on-hover="" >
+    </a-box> -->
+
+  
+
+    <!--Wall-->
+    <a-box id="wall"  position="2200 1300 1020" scale="1050 500 50" width="5.60" height="4.8" rotation="0 90 0" visible="false" static-body></a-box>
+    <a-box id="wall"  position="-2200 1300 1020" scale="1050 500 50" width="5.60" height="4.8" rotation="0 90 0" visible="false" static-body></a-box>
+    <a-box id="wall"  position="1400 1300 3900" scale="1050 500 50" width="1.7" height="4.8" rotation="0 0 0" visible="false" static-body></a-box>
+    <a-box id="wall"  position="1400 1300 3900" scale="1050 500 50" width="1.7" height="4.8" rotation="0 0 0" visible="false" static-body></a-box>
+    <a-box id="wall"  position="-1450 1300 3900" scale="1050 500 50" width="1.7" height="4.8" rotation="0 0 0" visible="false" static-body></a-box>
+    <a-box id="wall"  position="-540 1300 3985" scale="1050 500 50" width="0.2" height="4.8" rotation="0 90 0" visible="false" static-body></a-box>
+    <a-box id="wall"  position="485 1300 3985" scale="1050 500 50" width="0.2" height="4.8" rotation="0 90 0" visible="false" static-body></a-box>
+    
+
+    <a-box id="wall"  position="0 1300 -1700" scale="1050 500 50" width="5" height="4.8" rotation="0 0 0" visible="false" static-body></a-box>
+  
+      
+    
+    
+        <!--Front frame-->
+
+
+        <a-video id="vid" autoplay loop="true" src="./assets/images/isaac/project.mp4" shadow="cast: true"></a-video>
+        <a-box src="#vid" scale="4650 2200 10" position="-55 1200 -1700" rotation="0 0 0"  static-body click-to-expand></a-box>
+        
+      
+      
+       
+      
+      <a-plane position="-20 100 1000" color="#000000"rotation="-90 0 0" width="4700" height="5900" shadow="true" static-body  transparent="true" opacity="0.5"  camera-cube-env="distance: 5000; resolution: 512; repeat: true; interval: 1000;metalness:0;roughness:0; reflectivity: 5;"   material="metalness:0;roughness:0"  id="glass"></a-plane>
+      
+
+      <!--Scene 1 - Lobby-->
+      <!-- Model -->
+      <a-assets>
+        <a-asset-item id="lobby" src="./assets/3D-models/museum/isaac-jiyoon.gltf" shadow="cast: true" ></a-asset-item>
+      </a-assets>
+  
+      <a-entity  id="scene1"  position="0 0 0" scale="15 15 15"  gltf-model="#lobby"  visible> 
+      
+      
+        
+        
+     
+      
+
+        <a-entity light="type: ambient; intensity:0.4; distance: 1500; decay: 1; color:#FFFFF7"
+        position="-30 70 100"  visible></a-entity>
+        
+        <a-entity light="type: ambient; intensity:0.4; distance: 1500; decay: 1; color:#FFFFF7"
+        position="90 70 80"  visible></a-entity> 
+
+      </a-entity>
+        
+
+  
+  
+  
+  
+  
+     
+  
+      
+     <!-- Exit Door-->
+    <a-box position="-30 1000 4200"  scale="1150 2000 80" click-to-scene  visible name-on-hover="" static-body   change-color="color:"> </a-box>
+    
+
+  
+ 
+
+
+      
+  
+  
+      <!-- Gallery-->
+  
+  
+  
+      <!-- Camera-->
+     
+      <a-entity id="rig"  kinematic-body position="0 950 1000" movement-controls="constrainToNavMesh: true; speed:35"   look-controls="pointerLockEnabled: true">
+        <a-entity camera cursor="rayOrigin: mouse" ></a-entity>
+        <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #rig;"></a-entity>
+        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #rig;"></a-entity>
+      </a-entity>
+  
+   
+   
+      
+  
+  
+  
+    </a-scene>
+   
+     
+  
+     
+  <script>
+    
+    </script>
+  
+  </body>
+</html>
