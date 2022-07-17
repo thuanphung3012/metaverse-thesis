@@ -1,0 +1,243 @@
+body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: gray;}
+#map { position: absolute; top: 0; bottom: 0; width: 100%; z-index: -9999; }
+
+/* #marker {
+	background-image: url('/assets/images/mushroom.jpg');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	}
+	 
+.mapboxgl-popup {
+	max-width: 400px;
+} */
+
+.disabled {
+	pointer-events: none;
+	cursor: default;
+	opacity: 0.6;
+	text-decoration: none;
+}
+
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	justify-content: flex-start;
+}
+
+.container img{
+	margin: 10px;
+	padding: 10px;
+	width: 200px;
+}
+
+.container img:hover{
+	transform: scale(1.1);
+}
+
+.container-items{
+	display: inline-block;
+}
+
+figcaption{
+	text-align: center;
+	color: white;
+}
+
+#navbar{
+	display: flex;
+	margin:20px;
+	border: 0px solid black;
+}
+
+#homepage:hover {
+	color: black;
+}
+
+#about:hover h1{
+	color: black;
+}
+
+
+
+#navbar h1, #menu h1{
+	font-size: 30px;
+	color: white;
+}
+
+#navbar > :nth-child(1){
+	margin-right: auto;
+}
+
+
+a{
+	text-decoration: none;
+}
+
+.a-enter-vr-button:hover{
+	background-color: black;
+}
+
+#galleryButton{
+	border: 0px solid black;
+	background-color: gray;
+	font-size: 10px;
+	width: 50%;
+	border-radius: 10px;
+	margin:20px;
+	cursor: pointer;
+}
+
+#galleryButton:hover{
+	background-color: black;
+}
+
+
+#galleryButton h1{
+	font-size:25px;
+	color:white;
+}
+
+#bgVideo{
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -99;
+}
+
+
+#footer{
+	display: flex;
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#instruction{
+	display: flex;
+	height: auto;
+	font-size:25px;
+	border-radius: 10px;
+	margin:20px;
+	width:50%;
+	background-color: transparent;
+	justify-content: center;
+	align-items: center;
+}
+
+#instruction p{
+	margin:10px;
+	color: white;
+}
+
+.hidePage{
+	visibility: hidden;
+}
+
+#introduce {
+	display: block;
+	margin: 20px;	
+}
+
+#introduce h1{
+	color: white;
+	
+	padding-top: 200px;
+}
+
+table{
+
+	padding-top: 20px;
+
+	
+	
+}
+
+th{
+	padding-right: 150px;
+	font-size: 20px;
+	text-align: left;
+	color: white;
+	margin: 20px;
+}
+
+td{
+	font-size: 20px;
+	color: white;
+	margin: 20px;
+}
+
+.sound-play button{
+	display: inline-block;
+	margin-top: 40px;
+	border: gray;
+	border-radius: 20px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.sound-play img{
+	margin: 10px;
+	width: 25px;
+	height: 25px;
+	
+}
+
+.sound-play button:hover{
+	background-color: gray;
+}
+
+
+
+
+
+
+.mobile-device{
+	visibility: hidden;
+}
+
+@media only screen and (max-width: 700px) {
+	
+	#scene{
+		display: none;
+		visibility: hidden;
+	}
+
+	#landingPage{
+		visibility: hidden;
+	}
+	
+	body{
+		background-color: #605E64;
+	
+	}
+
+	.mobile-device{
+		visibility: visible;
+		display: inline-block;
+		top: 0;
+		position:fixed;
+		margin: 20px;
+		
+	}
+ 	.mobile-device p{
+		color: white;
+		font-size: 20px;
+		font-weight: 500;
+ 	}
+
+	 .mobile-device h1{
+		color: white;
+		font-size: 30px;
+		font-weight: 800;
+ 	}
+}
